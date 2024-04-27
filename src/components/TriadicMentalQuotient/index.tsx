@@ -38,8 +38,8 @@ const options: AnswerOptionType[] = [
 export default function TriadicMentalQuotient() {
   const [answers, setAnswers] = useState<AnswerType[]>(questions);
 
-  const endOfTest = true;
-  // answers.filter((answer) => answer.answer === 0).length === 0;
+  const endOfTest =
+    answers.filter((answer) => answer.answer === 0).length === 0;
 
   let categories: Result[] = [
     {
@@ -72,7 +72,6 @@ export default function TriadicMentalQuotient() {
   console.log(categories);
 
   const handleChanges = (index: number, value: number, category: string) => {
-    // if (endOfTest) return;
     const newAnswer = [...answers];
     newAnswer[index].answer = value;
     setAnswers(newAnswer);
